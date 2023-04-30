@@ -5,20 +5,21 @@ using UnityEngine;
 public class Cube : MonoBehaviour
 {
     public Rigidbody2D myRigidBody2d;
+    public Camera myCamera;
 
 
 
 
-    int numberOfTimes = 5;
-    string nameOfTheKey = "space";
-    float speedOfLight = 12.54f;
+    //int numberOfTimes = 5;
+    //string nameOfTheKey = "space";
+    //float speedOfLight = 12.54f;
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Hellow everyone im print from debug " + numberOfTimes);
-        Debug.LogError("Algo deu errado ao precionar " + nameOfTheKey);
-        Debug.LogWarning("Isso é um aviso, acinado velocidade da luz " + speedOfLight);
+        //Debug.Log("Hellow everyone im print from debug " + numberOfTimes);
+        //Debug.LogError("Algo deu errado ao precionar " + nameOfTheKey);
+        //Debug.LogWarning("Isso é um aviso, acinado velocidade da luz " + speedOfLight);
 
 
     }
@@ -44,6 +45,10 @@ public class Cube : MonoBehaviour
             myRigidBody2d.velocity = new Vector2(10f, 0f);
         }
 
+        if(transform.position.x > 9.5f)
+        {
+            Debug.LogWarning("OutOfBounds");
+        }
 
     }
 }
