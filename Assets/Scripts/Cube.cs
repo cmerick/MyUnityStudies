@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Cube : MonoBehaviour
 {
+    public Rigidbody2D myRigidBody2d;
+
+
+
+
     int numberOfTimes = 5;
     string nameOfTheKey = "space";
     float speedOfLight = 12.54f;
@@ -24,19 +29,19 @@ public class Cube : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            transform.Translate(Vector3.up * (Time.deltaTime + 1.0f));
+            myRigidBody2d.velocity = new Vector2(0f, 10f);
         }
         if (Input.GetKey(KeyCode.S))
         {
-            transform.Translate(Vector3.down * (Time.deltaTime + 0.1f));
+            myRigidBody2d.velocity = new Vector2(0f, -10f);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(Vector3.left * (Time.deltaTime + 0.1f));
+            myRigidBody2d.velocity = new Vector2(-10f, 0f);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(Vector3.right * (Time.deltaTime + 0.1f));
+            myRigidBody2d.velocity = new Vector2(10f, 0f);
         }
 
 
